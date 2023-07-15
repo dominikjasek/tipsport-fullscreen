@@ -1,0 +1,26 @@
+{
+  "name": "tipsport-fullscreen",
+  "version": "1.0.0",
+  "description": "Zobrazení streamu na Tipsportu v režimu fullscreen",
+  "scripts": {
+    "lint": "tsc",
+    "dev": "tsup src/*.ts --watch --format cjs --publicDir src/static",
+    "build": "tsup src/*.ts --format cjs --publicDir src/static"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominikjasek/tipsport-fullscreen.git"
+  },
+  "author": "Dominik Jašek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dominikjasek/tipsport-fullscreen/issues"
+  },
+  "homepage": "https://github.com/dominikjasek/tipsport-fullscreen#readme",
+  "devDependencies": {
+    "chrome-types": "^0.1.216",
+    "tsc": "^2.0.4",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  }
+}

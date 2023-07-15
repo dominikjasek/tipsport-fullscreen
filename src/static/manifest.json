@@ -1,0 +1,16 @@
+{
+  "name": "Tipsport Fullscreen",
+  "description": "Zobrazení streamu na Tipsportu v režimu Fullscreen",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.tipsport.cz/live/*"
+      ],
+      "js": [
+        "fullscreen.js"
+      ]
+    }
+  ]
+}
