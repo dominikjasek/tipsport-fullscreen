@@ -11,7 +11,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.tipsport.cz/live/*"
+        "https://www.tipsport.cz/*"
       ],
       "js": [
         "fullscreen.js"
