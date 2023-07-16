@@ -1,15 +1,23 @@
+const fullScreenButtonId = "fullScreenButton"
+
 const observer = new MutationObserver((mutations, observer) => {
+  const fullScreenButton = document.getElementById(fullScreenButtonId)
+  if (fullScreenButton) {
+    return
+  }
+  
   const videoElements = document.getElementsByTagName('video')
   const videoElement = videoElements[0]
 
   if (videoElement) {
-    videoElement.onplay = () => {
-      const videoControlsElement = document.getElementsByClassName("fp-controls")[0]
-      if (!videoControlsElement) {
-        throw new Error("videoControlsElement not found - tipsport probably changed its layout")
-      }
+    const videoControlsElement = document.getElementsByClassName("fp-controls")[0]
+    if (!videoControlsElement) {
+      return
+    }
 
+    videoElement.onplay = () => {
       const fullScreenButton = document.createElement("span");
+      fullScreenButton.id = fullScreenButtonId
       fullScreenButton.style.marginLeft = "15px"
       const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       icon.setAttribute("viewBox", "0 0 24 24");
@@ -29,10 +37,9 @@ const observer = new MutationObserver((mutations, observer) => {
 
       videoControlsElement.appendChild(fullScreenButton)
     }
-
-
   }
 });
+
 observer.observe(document, {
   subtree: true,
   attributes: true
