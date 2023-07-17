@@ -28,7 +28,7 @@ jobs:
         with:
           args: zip -qq -r tipsport-fullscreen.zip dist
       - name: Check outputs
-        run: ${{ steps.vars.outputs.sha_short }
+        run: echo ${{ steps.vars.outputs.sha_short }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
