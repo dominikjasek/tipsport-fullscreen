@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: npm ci
+        shell: bash
+      - name: Build app
+        run: npm run build
+        shell: bash
+      - name: Setup zip
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r tipsport-fullscreen.zip dist
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: tipsport-fullscreen.zip
