@@ -23,10 +23,12 @@ jobs:
       - name: Build app
         run: npm run build
         shell: bash
+      - name: Rename dist folder
+        run: mv dist tipsport-fullscreen
       - name: Setup zip
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r tipsport-fullscreen.zip dist/.
+          args: zip -qq -r tipsport-fullscreen.zip tipsport-fullscreen
       - name: Check outputs
         run: echo ${{ steps.vars.outputs.sha_short }}
       - name: Release
