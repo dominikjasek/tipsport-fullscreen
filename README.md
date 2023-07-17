@@ -1,6 +1,7 @@
 ### Tipsport Fullscreen
 
 Chrome extension na přidání tlačítka fullscreen pro živé přenosy na [Tipsportu](https://www.tipsport.cz/live).
+![image](https://github.com/dominikjasek/tipsport-fullscreen/assets/48070343/d04e48a7-3ff4-4d76-a39f-a122acbf1e7d)
 
 ### Instalace
 
