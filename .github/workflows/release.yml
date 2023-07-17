@@ -26,7 +26,7 @@ jobs:
       - name: Setup zip
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r tipsport-fullscreen.zip dist
+          args: zip -qq -r tipsport-fullscreen.zip dist/.
       - name: Check outputs
         run: echo ${{ steps.vars.outputs.sha_short }}
       - name: Release
