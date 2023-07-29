@@ -1,5 +1,6 @@
 const fullScreenButtonId = "fullScreenButton"
 
+// Add full screen button to video player
 const observer = new MutationObserver((mutations, observer) => {
   const fullScreenButton = document.getElementById(fullScreenButtonId)
   if (fullScreenButton) {
@@ -44,3 +45,18 @@ observer.observe(document, {
   subtree: true,
   attributes: true
 });
+
+// Add listener for pressing "F" key to toggle full screen
+document.addEventListener('keydown', (event) => {
+  if (event.key === "f") {
+    const videoElements = document.getElementsByTagName('video')
+    const videoElement = videoElements[0]
+    if (videoElement) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        videoElement.requestFullscreen();
+      }
+    }
+  }
+})
